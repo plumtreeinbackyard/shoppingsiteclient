@@ -1,0 +1,156 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint",
+    "scss": "node-sass --watch .\\src\\assets\\scss -o .\\src\\assets\\css"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.6.0",
+    "vuex-persistedstate": "^4.0.0-beta.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.11",
+    "@vue/babel-preset-app": "^4.5.9",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "^4.5.9",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-airbnb": "^5.0.2",
+    "@vue/test-utils": "^1.1.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "lint-staged": "^9.5.0",
+    "node-sass": "^5.0.0",
+    "sass": "^1.32.0",
+    "sass-loader": "^10.1.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/airbnb"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "rules": {
+      "quotes": [
+        "error",
+        "double",
+        {
+          "avoidEscape": true
+        }
+      ],
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "space-before-function-paren": [
+        "error",
+        "never"
+      ],
+      "no-underscore-dangle": [
+        "error",
+        {
+          "allow": [
+            "_id"
+          ]
+        }
+      ],
+      "linebreak-style": [
+        "error",
+        "windows"
+      ],
+      "no-shadow": [
+        "error",
+        {
+          "allow": [
+            "state",
+            "product",
+            "getters",
+            "products"
+          ]
+        }
+      ],
+      "implicit-arrow-linebreak": [
+        "error",
+        "beside"
+      ]
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "mocha": true
+        }
+      },
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "trailingComma": "none",
+    "semi": true,
+    "singleQuote": false,
+    "endOfLine": "crlf",
+    "proseWrap": "always",
+    "embeddedLanguageFormatting": "auto"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      ".*\\.(vue)$": "vue-jest",
+      "^.+\\.js$": "babel-jest"
+    },
+    "mapCoverage": true,
+    "preset": "@vue/cli-plugin-unit-jest/presets/no-babel"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
