@@ -55,7 +55,7 @@ describe("Home.vue", () => {
   });
 
   it("fill products array with state data ", () => {
-    const products = wrapper.products;
+    const { products } = wrapper;
     expect(products).toBe(state.all);
   });
 });
