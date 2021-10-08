@@ -63,6 +63,8 @@
 <script>
 import axios from "axios";
 
+const url = process.env.VUE_APP_API_URL;
+
 export default {
   name: "Edit",
   data: () => ({
@@ -72,7 +74,7 @@ export default {
   }),
   methods: {
     editProduct() {
-      const EDIT_PRODUCT_API_URL = `${window.location.protocol}//${window.location.host}/api/products/${this.id}`;
+      const EDIT_PRODUCT_API_URL = `${url}/api/products/${this.id}`;
 
       axios
         .put(EDIT_PRODUCT_API_URL, this.product)
@@ -80,7 +82,7 @@ export default {
           () => setTimeout(() => {
             this.error = "";
             alert("The product has been updated in database!"); // eslint-disable-line no-alert
-            window.location.href = `${window.location.protocol}//${window.location.host}/#/admin`;
+            window.location.href = `${url}/#/admin`;
           }, 500)
         )
         .catch(error => {
@@ -90,7 +92,7 @@ export default {
   },
   created() {
     this.id = this.$route.params.id;
-    const GET_PRODUCT_API_URL = `${window.location.protocol}//${window.location.host}/api/products/${this.id}`;
+    const GET_PRODUCT_API_URL = `${url}/api/products/${this.id}`;
     axios
       .get(GET_PRODUCT_API_URL)
       .then(response => {

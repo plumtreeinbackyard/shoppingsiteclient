@@ -3,8 +3,9 @@
  */
 import axios from "axios";
 
-const GET_PRODUCTS_API_URL = `${window.location.protocol}//${window.location.host}/api/products`;
-const UPDATE_INVENTORY_API_URL = `${window.location.protocol}//${window.location.host}/api/updateinventory`;
+const url = process.env.VUE_APP_API_URL;
+const GET_PRODUCTS_API_URL = `${url}/api/products`;
+const UPDATE_INVENTORY_API_URL = `${url}/api/updateinventory`;
 let products = [];
 
 export default {
