@@ -13,9 +13,7 @@ const getters = {
     const product = rootState.products.all.find(product => product.id === id);
     return {
       id,
-      title: product.title,
       price: product.price,
-      inventory: product.inventory,
       quantity
     };
   }),

@@ -1,5 +1,5 @@
 module.exports = {
   devServer: {
-    proxy: "https://shoppingsiteapi.herokuapp.com"
+    proxy: "https://localhost:5001"
   }
 };

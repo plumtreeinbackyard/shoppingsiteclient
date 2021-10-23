@@ -5,7 +5,7 @@ import axios from "axios";
 
 const url = process.env.VUE_APP_API_URL;
 const GET_PRODUCTS_API_URL = `${url}/api/products`;
-const UPDATE_INVENTORY_API_URL = `${url}/api/updateinventory`;
+const UPDATE_INVENTORY_API_URL = `${url}/api/products/updateinventory`;
 let products = [];
 
 export default {
@@ -43,7 +43,7 @@ export default {
   // update inventory in database after successful checkout,
   // cartProducts contains two properties: id and quantity.
   updateInventoryInDB(cartProducts) {
-    axios.post(UPDATE_INVENTORY_API_URL, cartProducts).catch(error => {
+    axios.put(UPDATE_INVENTORY_API_URL, cartProducts).catch(error => {
       console.log(error);
     });
   }
