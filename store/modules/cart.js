@@ -1,7 +1,6 @@
 import shop from "../../api/shop";
 
 // initial state
-// shape: [{ id, quantity }]
 const state = () => ({
   items: [],
   checkoutStatus: null
@@ -44,26 +43,6 @@ const actions = {
       }
     );
   },
-  // for simulate random checkout failure.
-  // checkout({ commit, state }, products) {
-  //   const savedCartItems = [...state.items];
-  //   commit("setCheckoutStatus", null);
-  //   // empty cart
-  //   commit("setCartItems", { items: [] });
-  //   shop.buyProducts(
-  //     products,
-  //     () => {
-  //       commit("setCheckoutStatus", "successful");
-  //       // update product inventory in database
-  //       shop.updateInventoryInDB(products);
-  //     },
-  //     () => {
-  //       commit("setCheckoutStatus", "failed");
-  //       // rollback to the cart saved before sending the request
-  //       commit("setCartItems", { items: savedCartItems });
-  //     }
-  //   );
-  // },
 
   addProductToCart({ state, commit }, { id, quantity }) {
     commit("setCheckoutStatus", null);
@@ -73,8 +52,6 @@ const actions = {
     } else {
       commit("incrementItemQuantity", { id, quantity });
     }
-    // remove item quantity from stock
-    // commit("products/decrementProductInventory", { id, quantity }, { root: true });
   },
 
   changeQuantity({ commit }, { id, quantity }) {

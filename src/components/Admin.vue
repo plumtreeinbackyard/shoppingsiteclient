@@ -106,8 +106,8 @@
 import axios from "axios";
 
 const url = process.env.VUE_APP_API_URL;
-const GET_PRODUCTS_API_URL = `${url}/api/products`;
-const ADD_PRODUCT_API_URL = `${url}/api/products`;
+const GET_PRODUCTS_API_URL = `${url}/products`;
+const ADD_PRODUCT_API_URL = `${url}/products`;
 
 export default {
   name: "Admin",
@@ -149,7 +149,7 @@ export default {
         });
     },
     deleteProduct(index, id) {
-      const DELETE_PRODUCT_API_URL = `${url}/api/products/${id}`;
+      const DELETE_PRODUCT_API_URL = `${url}/products/${id}`;
 
       // eslint-disable-next-line no-restricted-globals
       const r = confirm("Are you sure that you need to delete this product?"); // eslint-disable-line no-alert

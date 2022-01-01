@@ -3,7 +3,10 @@
     <div class="container">
       <div class="row justify-content-between">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 100%">
-          <router-link to="/" class="navbar-brand">Shopping Site Demo</router-link>
+          <router-link to="/" class="navbar-brand">Shopping Site Demo
+            <br />
+            <span style="color:#808080;font-size:60%;">Coded in Vue 2 and Django</span>
+          </router-link>
           <div class="show-on-small-screen">
             <router-link to="/cart" class="nav-link">
               <div

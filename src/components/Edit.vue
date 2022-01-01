@@ -52,7 +52,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <button type="submit" class="btn btn-dark mt-3">Save</button>
+            <button type="submit" class="btn btn-dark mt-3">Update</button>
           </div>
         </div>
       </div>
@@ -74,14 +74,15 @@ export default {
   }),
   methods: {
     editProduct() {
-      const EDIT_PRODUCT_API_URL = `${url}/api/products/${this.id}`;
+      const UPDATE_PRODUCT_API_URL = `${url}/products/${this.id}`;
 
       axios
-        .put(EDIT_PRODUCT_API_URL, this.product)
+        .put(UPDATE_PRODUCT_API_URL, this.product)
         .then(
           () => setTimeout(() => {
             this.error = "";
-            alert("The product has been updated in database!"); // eslint-disable-line no-alert
+            // eslint-disable-next-line
+            alert("The product has been updated in database!");
             window.location.href = `${url}/#/admin`;
           }, 500)
         )
@@ -92,7 +93,7 @@ export default {
   },
   created() {
     this.id = this.$route.params.id;
-    const GET_PRODUCT_API_URL = `${url}/api/products/${this.id}`;
+    const GET_PRODUCT_API_URL = `${url}/products/${this.id}`;
     axios
       .get(GET_PRODUCT_API_URL)
       .then(response => {

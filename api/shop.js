@@ -4,8 +4,8 @@
 import axios from "axios";
 
 const url = process.env.VUE_APP_API_URL;
-const GET_PRODUCTS_API_URL = `${url}/api/products`;
-const UPDATE_INVENTORY_API_URL = `${url}/api/products/updateinventory`;
+const GET_PRODUCTS_API_URL = `${url}/products`;
+const UPDATE_INVENTORY_API_URL = `${url}/products/updateinventory`;
 let products = [];
 
 export default {
@@ -20,7 +20,6 @@ export default {
       .catch(error => {
         console.log(error);
       });
-    // setTimeout(() => cb(products), 100);
   },
 
   buyProducts(products, cb) {
@@ -28,17 +27,6 @@ export default {
       cb();
     }, 100);
   },
-  // for simulate random checkout failure.
-  // buyProducts(products, cb, errorCb) {
-  //   setTimeout(() => {
-  //     simulate random checkout failure.
-  //     if (Math.random() > 0.5 || navigator.webdriver) {
-  //       cb();
-  //     } else {
-  //       errorCb();
-  //     }
-  //   }, 100);
-  // },
 
   // update inventory in database after successful checkout,
   // cartProducts contains two properties: id and quantity.
