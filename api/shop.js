@@ -18,6 +18,7 @@ export default {
         cb(products);
       })
       .catch(error => {
+        // eslint-disable-next-line
         console.log(error);
       });
   },
@@ -32,6 +33,7 @@ export default {
   // cartProducts contains two properties: id and quantity.
   updateInventoryInDB(cartProducts) {
     axios.put(UPDATE_INVENTORY_API_URL, cartProducts).catch(error => {
+      // eslint-disable-next-line
       console.log(error);
     });
   }

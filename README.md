@@ -34,8 +34,8 @@ Create a static.json file
 
 ```
 heroku login
-heroku create shoppingsiteclient
-heroku git:remote -a shoppingsiteclient
+heroku create shoppingsiteclientvue2
+heroku git:remote -a shoppingsiteclientvue2
 heroku buildpacks:add heroku/nodejs
 heroku buildpacks:add https://github.com/heroku/heroku-buildpack-static
 git add .
