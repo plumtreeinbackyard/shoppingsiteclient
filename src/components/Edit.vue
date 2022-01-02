@@ -83,7 +83,7 @@ export default {
             this.error = "";
             // eslint-disable-next-line
             alert("The product has been updated in database!");
-            window.location.href = `${window.location.origin}/admin`;
+            window.location.href = `${window.location.origin}/#/admin`;
           }, 500)
         )
         .catch(error => {
